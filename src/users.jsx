@@ -42,7 +42,7 @@ const UsersComponent = () => {
   }, []);
 
   // Remove a user from the current users array and add to removedUsers
-  const removeUser = (userId: string) => {
+  const removeUser = (userId) => {
     const updatedUsers = users.filter((user) => user.id !== userId);
     const removedUser = users.find((user) => user.id === userId);
     if (removedUser) {
@@ -52,7 +52,7 @@ const UsersComponent = () => {
   };
 
   // Restore a user back to the users array
-  const restoreUser = (userId: string) => {
+  const restoreUser = (userId) => {
     const restoredUser = removedUsers.find((user) => user.id === userId);
     if (restoredUser) {
       setUsers([...users, restoredUser]);
@@ -61,7 +61,7 @@ const UsersComponent = () => {
   };
 
   // Search functionality for filtering users by username (including removed users)
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
 
@@ -79,7 +79,7 @@ const UsersComponent = () => {
         placeholder="Search by username"
         style={{ margin: "10px", padding: "8px", width: "300px" }}
       />
-      <div>
+      <div className="card-box">
         {filteredUsers.map((user) => (
           <div key={user.id} style={cardStyle}>
             <h3>{user.username}</h3>
