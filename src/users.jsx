@@ -12,9 +12,9 @@ const generateRandomID = () => {
 };
 
 const UsersComponent = () => {
-  const [users, setUsers] = useState<any[]>([]);
-  const [removedUsers, setRemovedUsers] = useState<any[]>([]);
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [users, setUsers] = useState([]);
+  const [removedUsers, setRemovedUsers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     // Filter users where age >= 18
